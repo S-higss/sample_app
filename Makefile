@@ -1,14 +1,18 @@
 .DEFAULT_GOAL := help
 
+.PHONY: test
+test:	## automating test execution with Guard
+	@bundle exec guard
+
+.PHONY: run
+run:	## run rails server
+	@rails server
+
 .PHONY: push-all
 push-all:		## push all changes under current directory
 	@git add .
 	@git commit -m "commit all changes"
 	@git push origin HEAD
-
-.PHONY: test
-test:	## automating test execution with Guard
-	@bundle exec guard
 
 .PHONY: history
 history:        ## commit and push all changes to repo with commit message
