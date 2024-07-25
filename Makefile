@@ -8,6 +8,10 @@ test:	## automating test execution with Guard
 run:	## run rails server
 	@rails server
 
+.PHONY: migrate
+run:	## run pending migrations
+	@rails db:migrate
+
 .PHONY: push-all
 push-all:		## push all changes under current directory
 	@git add .
