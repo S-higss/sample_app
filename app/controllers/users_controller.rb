@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to @user
+      # -> is equal to -> redirect_to user_url(@user)
     else
       render 'new', status: :unprocessable_entity
     end
