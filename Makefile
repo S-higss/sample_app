@@ -12,6 +12,10 @@ run:	## run rails server
 migrate:	## run pending migrations
 	@rails db:migrate
 
+.PHONY: resetdb
+resetdb:	## run pending migrations
+	@rails db:migrate:reset
+
 .PHONY: rollback
 rollback:	## rollback migrations
 	@rails db:rollback
