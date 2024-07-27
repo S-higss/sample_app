@@ -1,0 +1,22 @@
+=> 
+[[32m#<User:0x00007fcb981f72d0[0m
+  id: [34m[1m1[0m,
+  name: [31m[1m"[0m[31mRails Tutorial[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mexample@railstutorial.org[0m[31m[1m"[0m,
+  created_at: Fri, 26 Jul 2024 01:30:52.093944000 UTC +00:00,
+  updated_at: Fri, 26 Jul 2024 01:30:52.093944000 UTC +00:00,
+  password_digest: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m[32m>[0m,
+ [32m#<User:0x00007fcb9b1e6360[0m
+  id: [34m[1m2[0m,
+  name: [31m[1m"[0m[31mShawn Jackson[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mshawn@example.com[0m[31m[1m"[0m,
+  created_at: Fri, 26 Jul 2024 01:44:40.234301000 UTC +00:00,
+  updated_at: Fri, 26 Jul 2024 01:44:40.234301000 UTC +00:00,
+  password_digest: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m[32m>[0m,
+ [32m#<User:0x00007fcb9b1e62c0[0m
+  id: [34m[1m3[0m,
+  name: [31m[1m"[0m[31memily[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31memily@sample.com[0m[31m[1m"[0m,
+  created_at: Fri, 26 Jul 2024 01:45:01.830349000 UTC +00:00,
+  updated_at: Fri, 26 Jul 2024 01:45:01.830349000 UTC +00:00,
+  password_digest: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m[32m>[0m]
