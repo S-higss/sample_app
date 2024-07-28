@@ -75,4 +75,7 @@ class UserTest < ActiveSupport::TestCase
     assert @user.remember_token
   end
 
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
+  end
 end
