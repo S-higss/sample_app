@@ -69,4 +69,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "is there remember_token and remember_digest" do
+    @user.remember
+    assert @user.remember_digest
+    assert @user.remember_token
+  end
+
 end
