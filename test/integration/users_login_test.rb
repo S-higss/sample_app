@@ -6,6 +6,21 @@ class UsersLogin < ActionDispatch::IntegrationTest
   end
 end
 
+class RememberingTest < UsersLogin
+  test "login with remembering" do
+    log_in_as(@user, remember_me: '1')
+    assert_equal cookies[:remember_token], assigns(:user).remember_token
+  end
+
+  test "login without remembering" do
+    # Cookieを保存してログイン
+    log_in_as(@user, remember_me: '1')
+    # Cookieが削除されていることを検証してからログイン
+    log_in_as(@user, remember_me: '0')
+    assert_empty cookies[:remember_token]
+  end
+end
+
 class InvalidPasswordTest < UsersLogin
   test "login path" do
     get login_path
@@ -35,6 +50,7 @@ class ValidLoginTest < ValidLogin
     assert is_logged_in?
     assert_redirected_to @user
   end
+
   test "redirect after login" do
     follow_redirect!
     assert_template 'users/show'
@@ -57,10 +73,16 @@ class LogoutTest < Logout
     assert_response :see_other
     assert_redirected_to root_url
   end
+
   test "redirect after logout" do
     follow_redirect!
     assert_select "a[href=?]", login_path
     assert_select "a[href=?]", logout_path,       count: 0
     assert_select "a[href=?]", user_path(@user),  count: 0
+  end
+
+  test "should still work after logout in second window" do
+    delete logout_path
+    assert_redirected_to root_url
   end
 end
