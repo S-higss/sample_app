@@ -12,6 +12,10 @@ run:	## run rails server
 migrate:	## run pending migrations
 	@rails db:migrate
 
+.PHONY: seed
+seed:	## add seed data to database
+	@rails db:seed
+
 .PHONY: resetdb
 resetdb:	## run pending migrations
 	@rails db:migrate:reset
